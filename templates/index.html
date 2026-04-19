@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Panel {% endblock%}
+
+{% block content %}
+<div class="content">
+<h1>Panel de Administración</h1>
+    <div class="cards">
+        <a href="/numProductos" class="btn-productos" id="contador" class="card verde"></a>
+
+            <a href="#" class="card azul">👥 Usuarios registrados</a>
+
+            <a href="/historial" class="card naranja">📊 Historial de movimientos</a>    
+    </div>
+
+    
+</div>
+{%endblock%}
+
+{% block extra_js%}
+    <script src="/static/src/index.js"></script>
+{% endblock%}

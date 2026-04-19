@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+    <link rel="stylesheet" href="/static/css/editar_productos.css">
+</head>
+<body>
+    <div class="form-container">
+
+    <h2>Editar Producto</h2>
+
+        <!-- Nombre producto -->
+        <div class="input-group" id="producto">
+        </div>
+
+        <!-- Stock actual -->
+        <div class="input-group" id="stock_actual">
+        </div>
+
+        <!-- Tipo de movimiento -->
+        <div class="input-group">
+            <label>Movimiento</label>
+
+            <select id="tipo_movimiento">
+                <!--es para poder leer el valor desde JS-->
+                <option value="entrada">Agregar stock</option>
+                <option value="salida">Quitar stock</option>
+            </select>
+        </div>
+
+        <!-- Cantidad -->
+        <div class="input-group">
+            <label>Cantidad</label>
+            <input id="cantidad" type="number" placeholder="Ej: 10">
+        </div>
+
+        <!-- Motivo -->
+        <div class="input-group">
+            <label>Motivo</label>
+            <textarea id="Motivo" placeholder="Explica por qué se modifica el stock..."></textarea>
+        </div>
+
+        <!-- Firma -->
+        <div class="input-group">
+            <label>Autorizado por</label>
+            <input  id="firma" type="text" placeholder="Nombre o firma">
+        </div>
+
+        <!-- Botón -->
+        <button id="boton-cambios" class="btn-guardar"> 
+            Aplicar cambios
+        </button>
+
+
+    <script src="/static/src/editar_producto.js"></script>
+</div>
+</body>
+</html>

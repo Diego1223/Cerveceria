@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Panel principal {% endblock %}</title>
+    <!--css global-->
+
+    <link rel="stylesheet" href="/static/css/index.css">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+
+        <h2 class="logo">Cerveceria</h2>
+
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="/productos">Productos</a></li>
+            <li><a href="/usuarios">Usuarios</a></li>
+            <li><a href="/configuracion">Configuración</a></li>
+            <li><a href="/cerrar_sesion">Cerrar sesión</a></li>
+        </ul>
+
+    </div>
+    <!--contenido que cambia dependiendo la ruta-->
+    <main class="contenido">
+        {%block content%} {% endblock %}
+    </main>
+
+    
+    <!--Es un boton, el cual dira la variedad, entrando a el mostrara el stock-->
+    {% block extra_js%} {% endblock%}
+    <script src="/static/src/index.js"></script>
+</body>
+</html>

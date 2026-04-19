@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/static/css/productos.css">
+</head>
+<body>
+<!-- CONTENIDO -->
+<div class="content">
+
+    <h1>Productos en existencia</h1>
+
+    <!-- TABLA -->
+    <div class="tabla-container">
+        <table class="tabla"> 
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Unidades</th>
+                    <th>Contenido</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody id="cuerpo-tabla">
+                <tr>
+                    <td>Coca Cola</td>
+                    <td>6</td>
+                    <td>355 ml</td>
+                    <td>
+                        <button class="btn editar">Editar</button>
+                        <button class="btn eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Pepsi</td>
+                    <td>12</td>
+                    <td>600 ml</td>
+                    <td>
+                        <button class="btn editar">Editar</button>
+                        <button class="btn eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/static/src/variedad_productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+
+<div class="login-container">
+    <form class="login-form" onsubmit="registrarse(event)">
+        <h2>Registrarse</h2>
+
+        <div class="input-group">
+            <label>Nombre</label>
+            <input id="nombre" type="text" placeholder="Nombre">
+        </div>
+        <div class="input-group">
+            <label>Correo</label>
+            <input id="correo" type="email" placeholder="correo@email.com">
+        </div>
+
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input id="password" type="password" placeholder="********">
+        </div>
+
+        <button>Entrar</button>
+        <a href="/">Iniciar sesion</a>
+    </form>
+</div>
+<script src="/static/src/registro.js"></script>
+</body>
+</html>

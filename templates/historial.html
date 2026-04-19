@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial</title>
+    <link rel="stylesheet" href="/static/css/historial.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="historial-container">
+
+    <h1>Historial de Movimientos</h1>
+
+    <!-- FILTROS -->
+    <div class="filtros">
+
+        <input type="text" id="buscador" placeholder="Buscar producto...">
+
+        <select>
+            <option value="">Tipo</option>
+            <option>Entrada</option>
+            <option>Salida</option>
+        </select>
+
+        <input type="date">
+
+    </div>
+
+    <!-- TABLA -->
+    <table class="tabla-historial">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Movimiento</th>
+                <th>Cantidad</th>
+                <th>Motivo</th>
+                <th>Autorizado</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+
+        <tbody id="cuerpo-tabla">
+
+            <tr>
+                <td>Coca Cola</td>
+                <td class="entrada">+10</td>
+                <td>10</td>
+                <td>
+                    Ver detalles 
+                    <span class="material-icons icono-ver" title="Ver motivo" onclick="verMotivo('Texto completo')">visibility</span>
+                </td>
+
+                <td>Diego</td>
+                <td>07/04/2026</td>
+            </tr>
+
+            <tr>
+                <td>Pepsi</td>
+                <td class="salida">-5</td>
+                <td>5</td>
+                <td>Venta</td>
+                <td>Admin</td>
+                <td>07/04/2026</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h3>Motivo del movimiento</h3>
+            <p id="text-motivo">DADASD</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/src/historial.js"></script>
+</body>
+</html>

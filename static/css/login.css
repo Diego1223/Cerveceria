@@ -1,0 +1,72 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CONTENEDOR LOGIN */
+
+.login-container{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    width:320px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TITULO */
+
+.login-form h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* INPUTS */
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+.input-group input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+}
+
+/* EFECTO CUANDO SE ESCRIBE */
+
+.input-group input:focus{
+    border-color:#2a5298;
+}
+
+/* BOTON */
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2a5298;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* HOVER BOTON */
+
+button:hover{
+    background:#1e3c72;
+}
