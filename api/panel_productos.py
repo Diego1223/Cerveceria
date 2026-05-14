@@ -1,10 +1,12 @@
 #Esta API es para mostrar todos los productos, unidades y contenido
 from flask import Blueprint, jsonify
 from database.conectar import db
+from auth.admin import is_admin
 
 panel_productos_bp = Blueprint("panel_productos", __name__)
 
 @panel_productos_bp.route("/panel_productos", methods=["GET"])
+@is_admin
 def panel():
     try:
         db.cursor.execute("SELECT * FROM productos")

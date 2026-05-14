@@ -9,6 +9,13 @@ from api.panel_productos import panel_productos_bp
 from api.editar_stock import editar_stock_bp
 from routes.historial_movimientos import historial_movimientos
 from api.historial_api import historial_bp
+from routes.cobro import cobro_bp
+from routes.trabajadores import trabajadores_bp
+from api.trabajadores_api import trabajadores_api
+from routes.editar_info_trabajador import editar_info_trabajador_bp
+from api.editar_in_trabajador import editar_info_api_bp
+from error_handler import register_error_handlers
+
 app = Flask(__name__)
 
 app.secret_key = "supersecretkey123"
@@ -29,6 +36,20 @@ app.register_blueprint(historial_bp, url_prefix="/api") #apis
 
 #Blueprints referentes a modificacion de stock
 app.register_blueprint(editar_stock_bp, url_prefix="/api")
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
 
+#Blueprints referente a trabajadores que hay registrados
+app.register_blueprint(trabajadores_bp)
+app.register_blueprint(editar_info_trabajador_bp)
+app.register_blueprint(trabajadores_api, url_prefix="/api")
+app.register_blueprint(editar_info_api_bp, url_prefix="/api")
+# Para los usuarios que no sean admins
+app.register_blueprint(cobro_bp)
+
+
+# Registro de paginas de errores personalizados 
+register_error_handlers(app)
+
+
+if __name__ == "__main__":
+    #ponemos el debug=False para hacer las pruebas con el errorhandler 
+    app.run(debug=True,port=5000)

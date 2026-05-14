@@ -7,6 +7,7 @@ const buscador = document.getElementById("buscador");
 //keyup - cada vez que suelte una tecla, ejecuta esto:
 buscador.addEventListener("keyup", function() {
     let filtro = buscador.value.toLowerCase();
+    
     //obtener TODAS las filas de la tabla
     let filas = document.querySelectorAll(".tabla-historial tbody tr");
 
@@ -26,6 +27,40 @@ buscador.addEventListener("keyup", function() {
     })
 
 });
+
+//Permite filtrar filas de una tabla dependiendo de la opcion seleccionada en el select
+const select = document.getElementById("select_tipo");
+//obtenemos todas las filas tr de tbody de la tabla con clase .tabla-historial
+const filas = document.querySelectorAll(".tabla-historial tbody tr");
+
+//Escuchar el evento con change
+select.addEventListener("change", (e) => {
+    //obtener el valor seleccionado
+    //e.target hace referencia al elemento que disparo el evento
+    const tipoSeleccionado = e.target.value.toLowerCase();
+    
+    //las filas se obtienen aqui porque la tabla se llena dinamicamente desde la API
+    const filas = document.querySelectorAll(
+        ".tabla-historial tbody tr"
+    );
+
+    //recorremos todas las filas
+    filas.forEach(fila => {
+        //obtener columna tipo
+        //querySelector busca dentro de la fila un elemento que tenga la clase col-tipo
+        const tipoFila = fila
+            .querySelector(".col-tipo")
+            .textContent
+            .toLowerCase();
+        
+        //verificar la coincidencia
+        const coincide = tipoFila.includes(tipoSeleccionado);
+
+        //ocultar si no coincide 
+        fila.hidden = !coincide;
+    });
+});
+
 
 async function historial() {
     const response = await fetch(`/api/mostrar_historial`);
@@ -49,22 +84,13 @@ async function historial() {
         t_body.innerHTML += `
             <tr>
                 <td>${p.descripcion}</td>
-                <td>${p.tipo_movimiento}</td>
+                <td class="col-tipo">${p.tipo_movimiento}</td>
                 <td>${p.cantidad}</td>
                 <td>${p.motivo}</td>
                 <td>${p.firma}</td>
                 <td>${fecha_formateda}</td>
             </tr>
         `; 
+        
     });
-}
-
-
-function verMotivo(texto) {
-    document.getElementById("modal").style.display = "flex";
-    document.getElementById("texto-motivo").innerHTML = texto;
-}
-
-function cerrarModal() {
-    document.getElementById("modal").style.display = "none";
 }

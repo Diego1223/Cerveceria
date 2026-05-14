@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajadores</title>
+    <link rel="stylesheet" href="/static/css/panel_trabajadores.css">
+</head>
+<body>
+    <div class="trabajadores-container">
+
+    <h1>Trabajadores Registrados</h1>
+
+    <div class="tabla-container">
+
+        <table class="tabla-trabajadores">
+
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>RFC</th>
+                    <th>Numero de seguro social</th>
+                    <th>Fecha de Registro</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="cuerpo-tabla">
+                <tr>
+                    <td>Diego Narváez</td>
+                    <td>diego@email.com</td>
+                    <td>Trabajador</td>
+                    <td>08/05/2026</td>
+                    <td><span class="activo">Activo</span></td>
+                    <td class="acciones">
+                        <button class="btn editar">Editar</button>
+                        <button class="btn eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>juan@email.com</td>
+                    <td>Trabajador</td>
+                    <td>07/05/2026</td>
+                    <td><span class="inactivo">Inactivo</span></td>
+                    <td class="acciones">
+                        <button class="btn editar">Editar</button>
+                        <button class="btn eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<script src="/static/src/panel_trabajadores.js"></script>
+</body>
+</html>

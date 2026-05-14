@@ -21,3 +21,17 @@ Session es una manera en que el servidor recuerde informacion sobre un usuario e
 - http es stateless (sin estado), cada request es independiente
 - la session le permite al servidor recordar quien eres despues de que inicies sesion
 
+## Funcionamiento interno de la aplicacion
+Para administradores se mostrara el sistema de gestion; sin embargo para los trabajadores que inicien sesion se mostrara el sistema de ventas normaldd
+
+# Usuarios registrados
+nombre: juan
+correo: juan@gmail.com
+password: juanito12
+rol: admin (1)
+
+nombre: alejandro
+correo: alejandro@gmail.com
+password: alejandro
+rol: empleado (2)
+

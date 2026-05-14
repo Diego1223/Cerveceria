@@ -3,16 +3,88 @@
 
 {% block content %}
 <div class="content">
-<h1>Panel de Administración</h1>
+<h1 class="titulo">Panel de Administración</h1>
     <div class="cards">
         <a href="/numProductos" class="btn-productos" id="contador" class="card verde"></a>
 
-            <a href="#" class="card azul">👥 Usuarios registrados</a>
+        <a href="/lista_trabajadores" class="card azul">👥 Trabajadores registrados</a>
 
-            <a href="/historial" class="card naranja">📊 Historial de movimientos</a>    
+        <a href="/historial" class="card naranja">📊 Historial de movimientos</a>   
+
+        <a href="/historial" class="card naranja">📊 Historial de movimientos</a>    
+    </div>
+    
+    <!-- CONTENEDOR DE GRÁFICA PRO -->
+<div class="grafica-container">
+
+    <div class="grafica-header">
+        <h2>Ventas del Mes</h2>
+        <select>
+            <option>Últimos 7 días</option>
+            <option>Últimos 30 días</option>
+            <option>Este mes</option>
+            <option>Este año</option>
+        </select>
     </div>
 
-    
+    <!-- RESUMEN SUPERIOR -->
+    <div class="resumen-ventas">
+        <div class="mini-card">
+            <h3>$18,450</h3>
+            <p>Ventas Totales</p>
+        </div>
+
+        <div class="mini-card">
+            <h3>+12%</h3>
+            <p>Crecimiento</p>
+        </div>
+
+        <div class="mini-card">
+            <h3>248</h3>
+            <p>Pedidos</p>
+        </div>
+    </div>
+
+    <!-- GRAFICA -->
+    <div class="grafica-barras">
+
+        <div class="columna">
+            <div class="barra" style="height: 65%;"></div>
+            <span>Lun</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 80%;"></div>
+            <span>Mar</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 55%;"></div>
+            <span>Mié</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 90%;"></div>
+            <span>Jue</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 70%;"></div>
+            <span>Vie</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 95%;"></div>
+            <span>Sáb</span>
+        </div>
+
+        <div class="columna">
+            <div class="barra" style="height: 50%;"></div>
+            <span>Dom</span>
+        </div>
+
+        </div>
+    </div>
 </div>
 {%endblock%}
 

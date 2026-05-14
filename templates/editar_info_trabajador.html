@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Informacion</title>
+    <link rel="stylesheet" href="/static/css/editar_trabajador.css">
+</head>
+<body>
+    <div class="perfil-container">
+
+    <h1>Información del Trabajador</h1>
+
+    <form class="form-perfil" id="mi_form">
+
+        <div class="grupo-input">
+            <label>Nombre completo</label>
+            <input type="text" value="" id="nombre">
+        </div>
+
+        <div class="grupo-input">
+            <label>Correo electrónico</label>
+            <input type="email" value="" id="correo">
+        </div>
+
+        <div class="grupo-input">
+            <label>RFC</label>
+            <input type="text" value="" id="rfc">
+        </div>
+
+        <div class="grupo-input">
+            <label>Número de Seguro Social</label>
+            <input type="text" value="" id="seguro_social">
+        </div>
+
+        <div class="grupo-input">
+            <label>Fecha de ingreso</label>
+            <input type="date" value="" id="fecha_ingreso">
+        </div>
+        <button type="submit" class="btn-guardar" id="guardar">
+            Guardar cambios
+        </button>
+
+    </form>
+
+</div>
+    <script src="/static/src/editar_info_trabajador.js"></script>
+</body>
+</html>

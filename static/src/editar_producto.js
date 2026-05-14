@@ -56,7 +56,7 @@ async function editarStock(id_producto, descripcion, existencias, tipo_movimient
         })
     });
 
-    const data = await response.json()
+    const data = await response.json();
 
     //200 - ok
     if (!response.ok) {

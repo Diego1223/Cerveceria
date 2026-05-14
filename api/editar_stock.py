@@ -1,10 +1,11 @@
 from flask import Blueprint, jsonify, request, session
 from database.conectar import db
-
+from auth.admin import is_admin
 editar_stock_bp = Blueprint("editar_stock", __name__)
 
 #Esta API se usara para mostrar en el frontend los datos necesarios, la otra sera para mandarlos a la base de datos
 @editar_stock_bp.route("/editar_stockV/<int:id>", methods=["GET"])
+@is_admin
 def editar_stock(id):
     try:
         db.cursor.execute("SELECT id, descripcion, existencias FROM productos WHERE id = %s", (id, ))
@@ -16,10 +17,9 @@ def editar_stock(id):
         return jsonify({
             "mensaje": "Error interno del servidor"
         }), 500
-    
-
-    
+     
 @editar_stock_bp.route("/editar_stock", methods=["POST"])
+@is_admin
 def actualizar_stock():
     try:
         data = request.get_json()

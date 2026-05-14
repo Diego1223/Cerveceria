@@ -4,8 +4,6 @@ from database.conectar import db
 
 login = Blueprint("/login", __name__)
 
-
-
 @login.route("/login", methods=["POST"])
 def verificar_login():
     data = request.get_json()

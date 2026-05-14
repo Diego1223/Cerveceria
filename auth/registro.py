@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Blueprint
+from flask import request, jsonify, Blueprint
 from werkzeug.security import generate_password_hash
 from database.conectar import db
 
@@ -7,11 +7,12 @@ registro_api = Blueprint("registro_api", __name__)
 @registro_api.route("/registro", methods=["POST"])
 def registro():
     data = request.get_json() or {}
-    print(data)
+    
     nombre = data.get("nombre")
     correo = data.get("correo")
     password = data.get("password")
-    
+    rol = data.get("rol") 
+
     if not correo or not password:
         return jsonify({
             "mensaje": "Correo o contraseña obligatorios"
@@ -28,7 +29,7 @@ def registro():
 
     #Insertar en la BD
     db.cursor.execute(
-        "INSERT INTO usuarios (correo, contrasena, nombre) VALUES (%s, %s, %s)", (correo, hash_password, nombre)
+        "INSERT INTO usuarios (correo, contrasena, nombre, admin) VALUES (%s, %s, %s, %s)", (correo, hash_password, nombre, rol)
     )
 
     db.connection.commit()
