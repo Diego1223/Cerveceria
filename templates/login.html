@@ -8,25 +8,26 @@
 
 <body>
 
-<div class="login-container">
-    <form class="login-form" onsubmit="login(event)">
-        <h2>Iniciar Sesión</h2>
-
-        <div class="input-group">
-            <label>Correo</label>
-            <input id="correo" type="email" placeholder="correo@email.com">
+    <form class="login-card" onsubmit="login(event)">
+        <img src="/static/img/logo.jpeg" alt="">
+        <h2>Iniciar sesion</h2>
+        
+        <div class="field">
+            <input id="correo" type="email" required>
+            <label>Email</label>
         </div>
-
-        <div class="input-group">
+        
+        <div class="field">
+            <input type="password" required id="password" >
             <label>Contraseña</label>
-            <input id="password" type="password" placeholder="********">
         </div>
-
-        <button>Entrar</button>
-        <a href="/registrarse">Registrarse</a>
+        
+        <div class="acciones">
+            <button class="btn-login">Entrar</button>
+            <a href="/registrarse" class="btn-register">Registrarse</a>
+        </div>
     </form>
-
-</div>
+    
 
 <script src="/static/src/login.js"></script>
 </body>

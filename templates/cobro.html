@@ -2,9 +2,91 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Apartado de cobro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta</title>
+    <link rel="stylesheet" href="/static/css/cobro/cobro.css">
 </head>
 <body>
-    <h1>Este sera el apartado de cobro </h1>
+
+    <div class="ventas-container">
+
+        <!-- PANEL IZQUIERDO -->
+        <div class="panel-izquierdo">
+
+            <div class="header-venta">
+                <h1>Nueva Venta</h1>
+                <p>Atención a cliente</p>
+            </div>
+
+            <!-- PRODUCTOS AGREGADOS -->
+            <div class="carrito">
+
+                <h2>Productos Seleccionados</h2>
+
+                <div class="lista-productos" id="lista-productos">
+                </div>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="resumen-venta">
+
+                <div class="fila-total">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">0</strong>
+                </div>
+
+                <div class="fila-total">
+                    <span>Descuento</span>
+                    <strong>$0</strong>
+                </div>
+
+                <div class="fila-total total-final">
+                    <span>Total Final</span>
+                    <strong id="total-final">$0</strong>
+                </div>
+
+                <button class="btn-cobrar">
+                    Finalizar Venta
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PANEL DERECHO -->
+        <div class="panel-derecho">
+
+            <div class="info-box">
+                <h2>Producto Actual</h2>
+
+                <div class="producto-preview">
+                    <h3 id="nombre-producto"></h3>
+                    <p id="precio-producto"></p>
+                    <p id="stock-producto"></p>
+                    <p id="unidad-producto"></p>
+                </div>
+            </div>
+
+            <!-- INPUT ABAJO DERECHA -->
+            <div class="scanner-box">
+                <label>Código del producto</label>
+
+                <div class="scanner-input">
+                    <input 
+                        type="text"
+                        id="codigo-producto"
+                        placeholder="Ej: T001"
+                    >
+                    <button onclick="buscar_producto()">Agregar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
+<script src="/static/src/cobro_sys/cobro.js"></script>
 </html>

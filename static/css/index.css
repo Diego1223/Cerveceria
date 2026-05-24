@@ -1,6 +1,6 @@
 /*
     al sidebar se le dio un position fixed, para que al momento de hacer scroll solo se mueva el contenido de la derecha
-    y en la clase content hay que darle un margin-left de 250 ya que el sidebar sale de el comportamiento natural del body
+    y en la clase content hay que darle un margin-left de 300 ya que el sidebar sale de el comportamiento natural del body
 */
 
 
@@ -66,6 +66,7 @@ body{
     min-height:100vh;
     width: 100%;
     margin-left: 300px;
+    animation: fadeUp .6s ease;
 }
 
 /* CARDS (DASHBOARD) */
@@ -109,10 +110,6 @@ body{
 
 /* COLORES */
 
-.verde{
-    background:#28a745;
-}
-
 .azul{
     background:#007bff;
 }
@@ -121,12 +118,16 @@ body{
     background:#fd7e14;
 }
 
+.rosa {
+    background:#ef1aaf;
+}
+
 /* BOTON */
 
 .btn-productos{
     display:inline-block;
     padding:12px 20px;
-    background:#28a745;
+    background:#2cc34f;
     color:white;
     font-size:16px;
     border-radius:8px;
@@ -140,6 +141,7 @@ body{
     transform:translateY(-5px);
     opacity:0.9;
     cursor:pointer;
+    background: #28a745;
 }
 
 .azul:hover {
@@ -148,6 +150,9 @@ body{
 
 .naranja:hover {
     background:#e76c07;
+}
+.rosa:hover {
+    background: #cb2599;
 }
 
 .grafica-container{
@@ -217,23 +222,37 @@ body{
 
 /* GRAFICA DE BARRAS */
 
-.grafica-barras{
-    height: 420px; /* ← más alta */
+.grafica-barras {
+    height: 300px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 20px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
+}
+
+.columna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra {
+    width: 60px;
+    background: #28a745;
+    border-radius: 10px 10px 0 0;
+    min-height: 30px;
 }
 
 /* COLUMNA */
 
 .columna{
     flex: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-end;
+    
 }
 
 /* BARRAS */
@@ -261,4 +280,15 @@ body{
     font-size: 14px;
     color: #555;
     font-weight: 600;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

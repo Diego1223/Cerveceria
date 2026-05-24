@@ -15,6 +15,8 @@ from api.trabajadores_api import trabajadores_api
 from routes.editar_info_trabajador import editar_info_trabajador_bp
 from api.editar_in_trabajador import editar_info_api_bp
 from error_handler import register_error_handlers
+from routes.visualizar_ventas import visualizar_ventas_route_bp
+from api.cobro.cobro_api import cobro_api_bp 
 
 app = Flask(__name__)
 
@@ -42,10 +44,14 @@ app.register_blueprint(trabajadores_bp)
 app.register_blueprint(editar_info_trabajador_bp)
 app.register_blueprint(trabajadores_api, url_prefix="/api")
 app.register_blueprint(editar_info_api_bp, url_prefix="/api")
+
+
 # Para los usuarios que no sean admins
 app.register_blueprint(cobro_bp)
 
-
+#Visualizar las ventas que se hayan registrado previamente por los trabajadores
+app.register_blueprint(visualizar_ventas_route_bp)
+app.register_blueprint(cobro_api_bp, url_prefix="/api")
 # Registro de paginas de errores personalizados 
 register_error_handlers(app)
 

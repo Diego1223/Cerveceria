@@ -1,8 +1,6 @@
 #Aqui iran los endpoints principales de el sidebar
 from flask import Blueprint, render_template
 from auth.login_required import login_required
-from werkzeug.security import generate_password_hash
-from database.conectar import db
 from auth.admin import is_admin
 
 main = Blueprint("main", __name__)

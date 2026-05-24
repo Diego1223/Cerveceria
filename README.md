@@ -31,7 +31,10 @@ password: juanito12
 rol: admin (1)
 
 nombre: alejandro
-correo: alejandro@gmail.com
+correo: alejandro@gmail
 password: alejandro
 rol: empleado (2)
 
+alonso@gmail.com   
+alonso 
+Trabajador

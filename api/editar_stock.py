@@ -18,7 +18,6 @@ def editar_stock(id):
             "mensaje": "Error interno del servidor"
         }), 500
      
-@editar_stock_bp.route("/editar_stock", methods=["POST"])
 @is_admin
 def actualizar_stock():
     try:

@@ -4,14 +4,9 @@ async function registrarse(event) {
     const nombre = document.getElementById("nombre").value;
     const correo = document.getElementById("correo").value;
     const password = document.getElementById("password").value;
+    //Esto del rol recibimos 1 si es admin y 2 si es trabajador
     const rol = document.getElementById("rol").value;
-    let rol_num = 0;
 
-    if (rol == "Administrador") {
-        rol_num = 1;
-    } else {
-        rol_num = 2;
-    }
 
     const response = await fetch("/api/registro", {
         method: "POST",
@@ -22,7 +17,7 @@ async function registrarse(event) {
             nombre: nombre,
             correo: correo,
             password: password,
-            rol: rol_num
+            rol: rol 
         })
     });
 

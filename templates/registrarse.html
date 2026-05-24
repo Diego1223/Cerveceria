@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="static/css/registro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
 
-<div class="login-container">
-    <form class="login-form" onsubmit="registrarse(event)">
-        <h2>Registrarse</h2>
-
-        <div class="input-group">
+<form class="login-card" onsubmit="registrarse(event)">
+    <img src="/static/img/logo.jpeg" alt="">
+    <h2>Registrarse</h2>
+    
+        <div class="field">
+            <input id="nombre" type="name" required>
             <label>Nombre</label>
-            <input id="nombre" type="text" placeholder="Nombre">
         </div>
-        <div class="input-group">
-            <label>Correo</label>
-            <input id="correo" type="email" placeholder="correo@email.com">
+    
+        <div class="field">
+            <input id="correo" type="email" required>
+            <label>Email</label>
         </div>
+        
 
-        <div class="input-group">
+        <div class="field">
+            <input type="password" required id="password" >
             <label>Contraseña</label>
-            <input id="password" type="password" placeholder="********">
         </div>
 
-        <div class="input-group">
-            <label for="rol">Tipo de usuario</label>
-
-            <select name="rol" id="rol">
-                <option value="">Selecciona tu rol</option>
-                <option value="">Administrador</option>
-                <option value="">Trabajador</option>
+        <div class="field">    
+            <select name="rol" id="rol" required>
+                <option value="" disabled selected></option>
+                <option value="1">Administrador</option>
+                <option value="2">Trabajador</option>
             </select>
+            <label>Selecciona tu rol</label>
+                
+            <span class="material-icons flecha">
+                expand_more
+            </span>
         </div>
-        <button>Entrar</button>
-        <a href="/">Iniciar sesion</a>
-    </form>
-</div>
+        
+        <div class="acciones">
+            <button class="btn-login">Entrar</button>
+            <a href="/" class="btn-register">Ya tienes cuenta? Inicia Sesion</a>
+        </div>
+</form>
+
 <script src="/static/src/registro.js"></script>
 </body>
 </html>

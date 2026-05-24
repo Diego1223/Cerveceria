@@ -5,8 +5,22 @@ body{
     background:#f4f4f4;
 }
 
-/* SIDEBAR */
+.tabla-container{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
+    animation: fadeUp .18s ease-out;
+    will-change: transform, opacity;
+}
+
+.sidebar a{
+    transition: background 0.2s ease;
+}
+
+
+/* SIDEBAR */
 .sidebar{
     width:220px;
     height:100vh;
@@ -29,14 +43,6 @@ body{
     margin:15px 0;
 }
 
-.sidebar a{
-    text-decoration:none;
-    color:white;
-    display:block;
-    padding:10px;
-    border-radius:6px;
-    transition:0.3s;
-}
 
 .sidebar a:hover{
     background:#333;
@@ -50,13 +56,6 @@ body{
 }
 
 /* TABLA */
-
-.tabla-container{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
 
 .tabla{
     width:100%;
@@ -97,4 +96,15 @@ body{
 .eliminar{
     background:#dc3545;
     color:white;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
