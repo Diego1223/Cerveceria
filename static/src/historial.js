@@ -9,15 +9,19 @@ buscador.addEventListener("keyup", function() {
     let filtro = buscador.value.toLowerCase();
     
     //obtener TODAS las filas de la tabla
-    let filas = document.querySelectorAll(".tabla-historial tbody tr");
+    let filas = document.querySelectorAll(".tabla-historial tbody tr ");
 
     //recorremos fila por fila
     filas.forEach(fila => {
         //convierte todo el texto de la fila en minusculas
         let texto = fila.innerText.toLowerCase();
-        
+        const texto_lower = fila
+            .querySelector(".col-descripcion")
+            .textContent
+            .toLowerCase();
+
         //si la fila contiene lo que escribio el usuario 
-        if (texto.includes(filtro)) {
+        if (texto_lower.includes(filtro)) {
             //muestra la fila
             fila.style.display = "";
         } else {
@@ -83,7 +87,7 @@ async function historial() {
         });
         t_body.innerHTML += `
             <tr>
-                <td>${p.descripcion}</td>
+                <td class="col-descripcion">${p.descripcion}</td>
                 <td class="col-tipo">${p.tipo_movimiento}</td>
                 <td>${p.cantidad}</td>
                 <td>${p.motivo}</td>
