@@ -40,10 +40,10 @@ Se rechazaran pedidos al CEDIS por los siguientes motivos. Maximos de stock 250
 Inventario minimo: Si baja de 20 se puede solicitar mas producto, caso contrario tiene mas de 150 no se permite
 
 Ejemplo 
-ID | Producto     | Cantidad | Estado
----------------------------------------
-1  | Six Modelo   | 20       | 🟢 Aprobado
-2  | Tecate       | 40       | 🔴 Rechazado
-3  | Indio        | 15       | 🟡 En tránsito
-4  | XX Lager     | 30       | 🔵 Entregado
+|ID | Producto     | Cantidad | Estado
+| --- | --- | --- | --- |
+|1  | Six Modelo   | 20       | 🟢 Aprobado |
+|2  | Tecate       | 40       | 🔴 Rechazado |
+|3  | Indio        | 15       | 🟡 En tránsito |
+|4  | XX Lager     | 30       | 🔵 Entregado |
 
