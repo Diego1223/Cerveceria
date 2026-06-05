@@ -17,6 +17,7 @@ from api.editar_in_trabajador import editar_info_api_bp
 from error_handler import register_error_handlers
 from routes.visualizar_ventas import visualizar_ventas_route_bp
 from api.cobro.cobro_api import cobro_api_bp 
+from api.cedis.cedis import pedido_cedis_bp
 
 app = Flask(__name__)
 
@@ -56,6 +57,8 @@ app.register_blueprint(cobro_api_bp, url_prefix="/api")
 register_error_handlers(app)
 
 
+#CEDIS 
+app.register_blueprint(pedido_cedis_bp, url_prefix="/api")
 if __name__ == "__main__":
     #ponemos el debug=False para hacer las pruebas con el errorhandler 
     app.run(debug=True,port=5000)

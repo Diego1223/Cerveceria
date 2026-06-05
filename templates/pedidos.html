@@ -1,10 +1,61 @@
 {% extends "base.html" %}
 
 {% block title %} Realizar pedido {% endblock%}
+{% block extra_css%}
+<link rel="stylesheet" href="/static/css/cedis/cedis.css">
+{% endblock%}
 
 
 {% block content %}
-<div class="content">
-    <h1>Aqui se realizaran los pedidos al CEDIS</h1>
+<main class="contenido">
+<div class="pedido-container">
+
+    <div class="header-pedido">
+        <h1>Nuevo Pedido al CEDIS</h1>
+
+        <button id="btnAgregarProducto" class="btn-agregar">
+            + Agregar producto
+        </button>
+    </div>
+
+    <div class="tabla-container">
+        <table id="tablaPedido">
+
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbodyPedido">
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="observaciones-container">
+
+        <label>Observaciones</label>
+
+        <textarea
+            id="observaciones"
+            placeholder="Motivo del pedido..."
+        ></textarea>
+
+    </div>
+
+    <div class="acciones">
+        <button class="btn-enviar">
+            Enviar Pedido
+        </button>
+    </div>
+
 </div>
+</main>
+{% endblock%}
+{% block extra_js%} 
+<script src="/static/src/cedis/pedido_cedis.js"></script>
 {% endblock%}
