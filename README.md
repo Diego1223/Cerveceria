@@ -67,8 +67,12 @@ En esta consula sql estamos haciendo un JOIN entre dos tablas
 
 En cuanto a la arquitectura de la tabla inventario_cedis, solo puede existir un producto a la vez, por lo tanto agregamos esto
 ADD CONSTRAINT agrega una restriccion llamada uk_producto_cedis, uk hace referencia a Unique Key. UNIQUE (producto_id) indica que los valores de producto_id deben ser unicos
-´´´MySQL
+´´´sql
     ALTER TABLE inventario_cedis
     ADD CONSTRAINT uk_producto_cedis
     UNIQUE(producto_id);
 ´´´
+
+
+#Transacciones SQL
+Las transacciones son un conjunto de operaciones SQL que se comportan como una sola unidad, si todo sale bien se ejecuta si algo sale mal hace rollback y regresamos al punto de inicio
