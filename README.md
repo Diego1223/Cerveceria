@@ -1,6 +1,6 @@
 # Cerveceria
 
-![Imagen index] (git_img/index.png)
+![Imagen index](git_img/index.png)
 
 ## Editar un producto en existencia
 Se tendra que poner el motivo, con firma de autorizado y si es merma o robo
