@@ -54,7 +54,7 @@ En esta consula sql estamos haciendo un JOIN entre dos tablas
 - INNER JOIN, se une la tabla productos con la tabla inventario_cedis, y se le agrega el alias que es p
 - ON p.id = ic.producto_id es la condicion de union, significa busca en la tabla productos el registro donde el id sea igual al producto_id guardado en inventario_cedis
 
-´´´Mysql
+```Mysql
     SELECT 
         ic.id,
         p.descripcion,
@@ -63,16 +63,43 @@ En esta consula sql estamos haciendo un JOIN entre dos tablas
     FROM inventario_cedis ic
     INNER JOIN productos p
         ON p.id = ic.producto_id;
-´´´
+```
 
 En cuanto a la arquitectura de la tabla inventario_cedis, solo puede existir un producto a la vez, por lo tanto agregamos esto
 ADD CONSTRAINT agrega una restriccion llamada uk_producto_cedis, uk hace referencia a Unique Key. UNIQUE (producto_id) indica que los valores de producto_id deben ser unicos
-´´´sql
+```Mysql
     ALTER TABLE inventario_cedis
     ADD CONSTRAINT uk_producto_cedis
     UNIQUE(producto_id);
-´´´
+```
 
 
-#Transacciones SQL
+# Transacciones SQL
 Las transacciones son un conjunto de operaciones SQL que se comportan como una sola unidad, si todo sale bien se ejecuta si algo sale mal hace rollback y regresamos al punto de inicio
+
+
+# Debuggin en Flask python
+Para hacer debug en el backend de alguna API una de las herramientas que uso es ThunderClient para hacer peticiones a la API y el "Run and Debug" de Vs code (create a launch.json file -> python) y en el json la configuracion basica es:
+```json
+    {
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flask Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py",
+                "FLASK_ENV": "development"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        }
+    ]
+}
+```

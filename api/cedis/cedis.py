@@ -22,12 +22,12 @@ def crear_pedido():
     try: 
         #Obtener los datos enviados desde el front
         data = request.get_json()
-
-        producto_id = data.get("producto_id")
+    
+        codigo = data.get("codigo")
         cantidad_solicitar = data.get("cantidad")
 
         #Validar los datos
-        if not producto_id:
+        if not codigo:
             return jsonify({
                 "mensaje": "Debe enviar un producto"
             }), 400
@@ -45,21 +45,32 @@ def crear_pedido():
         #Iniciamos la transaccion 
         db.connection.start_transaction()
 
+        db.cursor.execute("SELECT id, codigo, descripcion FROM productos WHERE codigo = %s", (codigo, ))
+        resultado_productos = db.cursor.fetchone()
+
+        if resultado_productos is None:
+            db.connection.rollback()
+            return jsonify({
+                "mensaje": "Producto no encontrado"
+            }), 404
+        
+        producto_id = resultado_productos["id"]
+        codigo = resultado_productos["codigo"]
+        descripcion = resultado_productos["descripcion"]       
+
         #Buscar stock del producto en el cedis
         db.cursor.execute("""
             SELECT stock FROM inventario_cedis WHERE producto_id = %s
-        """, (producto_id, ))
+        """, (producto_id,))
 
         resultado = db.cursor.fetchone()
-
         #Verificar que exista el producto
         if resultado is None:
             db.connection.rollback()
             return jsonify({
                 "mensaje": "Producto no encontrado en CEDIS"
             }), 404
-        
-        stock = resultado[0]
+        stock = resultado["stock"]
 
         #Validar stock
         if cantidad_solicitar > stock:
@@ -76,8 +87,12 @@ def crear_pedido():
         }), 200
 
     except Exception as e:
+        import traceback
         #Vuelve atras
         db.connection.rollback()
+
+        traceback.print_exc()
+
         return jsonify({
-            "mensaje": f"Error interno del servidor {e}"
-        })
+            "mensaje": str(e)
+        }), 500
