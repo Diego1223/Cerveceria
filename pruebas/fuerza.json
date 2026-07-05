@@ -1,0 +1,50 @@
+[
+    {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },
+        {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },    {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },    {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },    {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },    {
+        "correo": "user1@test.com",
+        "password": "123456"
+    }, 
+    {
+        "correo": "user2@test.com",
+        "password": "qwerty"
+    },
+    {
+        "correo": "diego@gmail",
+        "password": "pruebitaXD"
+    }
+]

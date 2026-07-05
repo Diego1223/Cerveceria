@@ -79,7 +79,13 @@ ADD CONSTRAINT agrega una restriccion llamada uk_producto_cedis, uk hace referen
 # Transacciones SQL
 Las transacciones son un conjunto de operaciones SQL que se comportan como una sola unidad, si todo sale bien se ejecuta si algo sale mal hace rollback y regresamos al punto de inicio
 
+# FOR UPDATE en MySQL
+Imaginemos que dos empleados aprueban al mismo tiempo: 
+- Pedido A pide 8
+- Pedido B pide 8
 
+Si no existiera el bloqueo: A lee 10 B lee 10, A descuenta, B descuenta y al final stock= -6.
+Eso se resuelve con FOR UPDATE porque bloquea esa fila hasta terminar la transaccion
 # Debuggin en Flask python
 Para hacer debug en el backend de alguna API una de las herramientas que uso es ThunderClient para hacer peticiones a la API y el "Run and Debug" de Vs code (create a launch.json file -> python) y en el json la configuracion basica es:
 ```json
