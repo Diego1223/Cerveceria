@@ -5,6 +5,18 @@
 ## Editar un producto en existencia
 Se tendra que poner el motivo, con firma de autorizado y si es merma o robo
 
+## Fetchall y Fetchone en Mysql. Diferencias y formas de obtener registros
+fetchall en mysql flask regresa una lista de json y fetchone no, obtiene un solo registro, una fila
+con fetchall accedemos asi en el frontend:
+```javascript
+    console.log(data[0].id);
+```
+
+y con fetchone tendriamos que acceder asi:
+```javascript
+    console.log(data.id);
+```
+
 ## Eliminar productos en existencia
 De igual forma se tendran que ingresar los motivos de la eliminación del producto. No todos podran eliminar ni editar productos
 

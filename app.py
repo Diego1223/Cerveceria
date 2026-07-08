@@ -18,6 +18,7 @@ from error_handler import register_error_handlers
 from routes.visualizar_ventas import visualizar_ventas_route_bp
 from api.cobro.cobro_api import cobro_api_bp 
 from api.cedis.cedis import pedido_cedis_bp
+from routes.estado_pedido import estado_route_bp
 
 app = Flask(__name__)
 
@@ -56,6 +57,8 @@ app.register_blueprint(cobro_api_bp, url_prefix="/api")
 # Registro de paginas de errores personalizados 
 register_error_handlers(app)
 
+
+app.register_blueprint(estado_route_bp)
 
 #CEDIS 
 app.register_blueprint(pedido_cedis_bp, url_prefix="/api")

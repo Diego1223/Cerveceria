@@ -152,8 +152,22 @@ def obtener_id_pedidoCedis():
         return jsonify({
             "mensaje": f"Error interno del servidor {e}"
         })
+#Ver detalles del pedido cedis, lo usaremos para darle seguimiento al pedido 
+@pedido_cedis_bp.route("/visualizar_pedido", methods=["GET"])
+def visualizar_pedido():
+    try:
+        db.cursor.execute("SELECT * FROM pedido_cedis ORDER BY id DESC LIMIT 1")
+        data = db.cursor.fetchone()
+
+        return jsonify(data)
+
+    except Exception as e:
+        return jsonify({
+            "mensaje": f"Error interno del servidor {e}"
+        }), 500
 
 #Aprobar pedidos
+#Recibimos el id desde la URL
 @pedido_cedis_bp.route("/aprobar_pedido/<int:pedido_id>", methods=["PUT"])
 def aprobar_pedido(pedido_id):
     try:

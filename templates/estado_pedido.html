@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Estado del pedido {% endblock %}
+
+{% block extra_css %} 
+<link rel="stylesheet" href="/static/css/estado_pedido.css">
+{% endblock%}
+
+{% block content%}
+<main class="contenido">
+    <h1>Estado del pedido</h1>
+    <p id="estado"></p>
+</main>
+{% block extra_js%} <script src="/static/src/cedis/ver_estados.js"></script> {% endblock%}
+{% endblock%}
